@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="leafGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="techGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="#0f172a" stroke="#22c55e" stroke-width="4" />
+  <path d="M60 30 C54 44 46 44 40 58 C40 70 50 78 50 88 H70 C70 78 80 70 80 58 C74 44 66 44 60 30 Z" fill="url(#leafGradient)" />
+  <path d="M60 30 C64 44 72 44 78 58 C78 70 68 78 68 88 H52 C52 78 42 70 42 58 C48 44 56 44 60 30 Z" fill="#fff" opacity="0.16" />
+  <path d="M35 90 H45 V70 H35 V90 Z M75 90 H85 V70 H75 V90 Z" fill="#fff" />
+  <path d="M35 70 C35 58 45 52 60 52 C75 52 85 58 85 70" stroke="url(#techGradient)" stroke-width="3" fill="none" stroke-linecap="round" />
+  <circle cx="35" cy="90" r="4" fill="url(#techGradient)" />
+  <circle cx="85" cy="90" r="4" fill="url(#techGradient)" />
+  <text x="60" y="112" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700">ODAA TECH</text>
+</svg>
