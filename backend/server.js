@@ -36,7 +36,15 @@ if (require.main === module) {
 
 	const startServer = async () => {
 		await connectDB();
-		app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+		const server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+		server.on('error', (err) => {
+			if (err.code === 'EADDRINUSE') {
+				console.error(`Port ${PORT} is already in use. Please stop the process using the port or set PORT to a free value.`);
+			} else {
+				console.error('Server error:', err);
+			}
+			process.exit(1);
+		});
 	};
 
 	startServer().catch(err => {
