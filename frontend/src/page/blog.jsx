@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import PostCard from '../components/Post/PostCard';
+import PostCard from '../components/post/postcard';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 import { getPosts } from '../services/firebase';
 import { FiSearch } from 'react-icons/fi';
@@ -11,7 +11,7 @@ const categories = [
   { id: 'Family', name: 'Family', icon: '👨‍👩‍👧‍👦' },
   { id: 'Tutorial', name: 'Tutorial', icon: '📖' },
   { id: 'interprenership', name: 'interprenership', icon: '📰' },
-  { id: 'Review', name: 'Review', icon: '⭐' },
+  { id: 'leadership', name: 'leadership', icon: '⭐' },
 ];
 
 export default function Blog() {
@@ -60,7 +60,7 @@ export default function Blog() {
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Our Blog</h1>
         <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
-          Explore our collection of articles about technology, family, interprenership, and digital life
+          Explore our collection of articles about technology, family, interprenership, leadership, and digital life
         </p>
       </div>
 
