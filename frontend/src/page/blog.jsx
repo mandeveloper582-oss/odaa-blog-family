@@ -10,8 +10,8 @@ const categories = [
   { id: 'Technology', name: 'Technology', icon: '💻' },
   { id: 'Family', name: 'Family', icon: '👨‍👩‍👧‍👦' },
   { id: 'Tutorial', name: 'Tutorial', icon: '📖' },
-  { id: 'interprenership', name: 'interprenership', icon: '📰' },
-  { id: 'leadership', name: 'leadership', icon: '⭐' },
+  { id: 'Enterprenership', name: 'Enterprenership', icon: '📰' },
+  { id: 'Leadership', name: 'Leadership', icon: '⭐' },
 ];
 
 export default function Blog() {

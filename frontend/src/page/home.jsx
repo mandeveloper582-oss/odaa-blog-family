@@ -44,7 +44,7 @@ export default function Home() {
             FAMILY BLOG
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Empowering families through technology, interprenership,leadership one story at a time
+            Empowering families through technology, Enterprenership,Leadership one story at a time
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/blog" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">

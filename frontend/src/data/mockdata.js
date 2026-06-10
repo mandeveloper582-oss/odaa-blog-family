@@ -100,21 +100,21 @@ export const categories = [
   { id: 'Technology', name: 'Technology', icon: '💻', color: 'secondary' },
   { id: 'Family', name: 'Family', icon: '👨‍👩‍👧‍👦', color: 'primary' },
   { id: 'Tutorial', name: 'Tutorials', icon: '📖', color: 'secondary' },
-  { id: 'Interprenership', name: 'Interprenership', icon: '💼', color: 'primary' },
-  { id: 'leadership', name: 'leadership', icon: '⭐', color: 'secondary' }
+  { id: 'Enterprenership', name: 'Enterprenership', icon: '💼', color: 'primary' },
+  { id: 'Leadership', name: 'Leadership', icon: '⭐', color: 'secondary' }
 ];
 
 export const teamMembers = [
   {
     name: 'Lencho ',
     image: lenchoImage,
-    role: 'Founder & CEO',
+    role: 'Developer & Co-Founder',
     bio: 'Software Developer '
   },
   {
     name: 'Gelata',
     image: gelataImage,
-    role: 'Co-Founder & CTO',
+    role: 'CEO & Founder',
     bio: ' Tech Entrepreneur'
   }
 ];

@@ -37,8 +37,8 @@ export default function Contact() {
               <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 text-xl">📧</div>
               <h3 className="text-xl font-bold">Email Us</h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-300">geleta@gmail.com</p>
-            <p className="text-gray-600 dark:text-gray-300">support@odaatech.com</p>
+            <p className="text-gray-600 dark:text-gray-300">galataaomer@gmail.com</p>
+            <p className="text-gray-600 dark:text-gray-300">lenchoa391@gmail.com</p>
           </div>
 
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
@@ -46,7 +46,9 @@ export default function Contact() {
               <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 text-xl">📞</div>
               <h3 className="text-xl font-bold">Call Us</h3>
             </div>
+           
             <p className="text-gray-600 dark:text-gray-300">+251 987900575</p>
+             <p className="text-gray-600 dark:text-gray-300">+251 921399695</p>
             <p className="text-gray-600 dark:text-gray-300">Mon-Fri, 9AM - 6PM</p>
           </div>
 
@@ -55,7 +57,7 @@ export default function Contact() {
               <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center text-primary-600 text-xl">📍</div>
               <h3 className="text-xl font-bold">Visit Us</h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-300">dire dawa, Ethiopia</p>
+            <p className="text-gray-600 dark:text-gray-300">Dire Dawa, Ethiopia</p>
             <p className="text-gray-600 dark:text-gray-300">sabian</p>
           </div>
         </div>
