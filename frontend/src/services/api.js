@@ -2,7 +2,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 // Use environment variable or fallback
-const API_URL = import.meta.env.VITE_API_URL || n'https://odaa-blog-family.orender.com';
+const API_URL = import.meta.env.VITE_API_URL || 'https://odaa-blog-family.orender.com';
 
 const api = axios.create({
   baseURL: API_URL,
