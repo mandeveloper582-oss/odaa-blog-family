@@ -1,6 +1,6 @@
  import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import PostCard from '../components/Post/PostCard';
+import PostCard from '../components/post/postcard';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 import { getPosts } from '../services/firebase';
 
@@ -41,10 +41,10 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Welcome to <span className="text-yellow-300">ODAA</span>
             <br />
-            FAMILY TECH
+            FAMILY BLOG
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Empowering families through technology, interprenership,leadership one story at a time
+            Empowering families through technology, Enterprenership,Leadership one story at a time
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/blog" className="btn-primary bg-white text-primary-600 hover:bg-gray-100">

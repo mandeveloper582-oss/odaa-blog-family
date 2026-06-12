@@ -1,7 +1,11 @@
 # ODAA Blog - Complete Fix & Deployment Report
 
 ## ✅ DEPLOYMENT STATUS: SUCCESSFUL
-**Live URL:** https://oda-tech.web.app
+
+### Deployment Targets
+- **Frontend:** Deployed to Vercel ✅
+- **Backend:** Deployed to Render ✅
+- **Firebase Hosting:** https://oda-tech.web.app (legacy)
 
 ---
 
@@ -200,11 +204,58 @@
 - ✅ Bundle size: 801.59 kB (unminified), 212.97 kB (gzipped)
 - ⚠️  Note: Chunk size warning - consider code splitting for performance
 
+### Current Deployment Configuration
+
+#### Frontend - Vercel ✅
+- **Entry Point:** `frontend/` directory
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist/`
+- **Framework Preset:** Vite
+- **Node Version:** Recommended 18+
+- **Environment Variables Required:**
+  - `VITE_FIREBASE_API_KEY` 
+  - `VITE_FIREBASE_PROJECT_ID`
+  - `VITE_FIREBASE_AUTH_DOMAIN`
+  - `VITE_FIREBASE_STORAGE_BUCKET`
+  - `VITE_FIREBASE_MESSAGING_SENDER_ID`
+  - `VITE_FIREBASE_APP_ID`
+  - `VITE_BACKEND_URL` (if using backend API)
+
+#### Backend - Render ✅
+- **Entry Point:** `backend/server.js`
+- **Start Command:** `npm start`
+- **Node Version:** Recommended 18+
+- **Environment Variables Required:**
+  - `PORT` (default: 5000)
+  - `MONGODB_URI` (MongoDB connection string)
+  - `JWT_SECRET` (for authentication)
+  - `CLOUDINARY_CLOUD_NAME`
+  - `CLOUDINARY_API_KEY`
+  - `CLOUDINARY_API_SECRET`
+  - `FRONTEND_URL` (Vercel frontend URL)
+
+### Deployment Verification Checklist
+
+#### Backend (Render)
+- ✅ `package.json` has `"start"` script configured
+- ✅ Server listens on `process.env.PORT` variable
+- ✅ MongoDB configuration supports environment variables
+- ✅ CORS configured to accept frontend URL
+- ✅ Error handling middleware in place
+- ✅ Database connection with retry logic
+
+#### Frontend (Vercel)
+- ✅ `package.json` has `"build"` script configured
+- ✅ Vite configuration optimized for production
+- ✅ Firebase config properly set in environment
+- ✅ API calls use environment variables for backend URL
+- ✅ Build outputs to `dist/` directory
+
 ### Deployment
-- ✅ Firebase Hosting deployed successfully
+- ✅ Frontend deployed to Vercel
+- ✅ Backend deployed to Render
 - ✅ Firestore rules compiled and deployed
 - ✅ Firestore indexes configured
-- ✅ Live at: **https://oda-tech.web.app**
 
 ---
 

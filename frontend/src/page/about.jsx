@@ -10,7 +10,7 @@ export default function About() {
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">About ODAA FAMILY TECH</h1>
         <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
-          ODAA FAMILY TECH is a personal blog focused on expanding knowledge, inspiring youth, conducting extensive research and collecting valuable skills and expertise to pass on to the next generation. Our main goal is to show young people the right path, enhance their understanding and support them in becoming self-reliant and improving their lives.
+          ODAA FAMILY BLOG is a personal blog focused on expanding knowledge, inspiring youth, conducting extensive research and collecting valuable skills and expertise to pass on to the next generation. Our main goal is to show young people the right path, enhance their understanding and support them in becoming self-reliant and improving their lives.
         </p>
       </div>
 
@@ -36,7 +36,7 @@ export default function About() {
       {/* Team Section */}
       <div className="mb-16">
         <h2 className="text-3xl font-bold text-center mb-4">Meet Our Team</h2>
-        <p className="text-center text-gray-600 dark:text-gray-300 mb-12">The passionate people behind ODAA FAMILY TECH</p>
+        <p className="text-center text-gray-600 dark:text-gray-300 mb-12">The passionate people behind ODAA FAMILY BLOG</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {teamMembers.map(member => (
             <div key={member.name} className="text-center group">

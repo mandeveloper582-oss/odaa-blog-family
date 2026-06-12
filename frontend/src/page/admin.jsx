@@ -51,7 +51,7 @@ export default function Admin() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="input-field"
-                placeholder="admin@example.com"
+                placeholder="galataaomer@gmail.com"
                 required
               />
             </div>
