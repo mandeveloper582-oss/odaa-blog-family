@@ -17,12 +17,12 @@ export const mockPosts = [
     ],
     tags: ['parenting', 'tech-skills', 'digital-literacy'],
     author: 'ODAA Admin',
-    createdAt: '2024-01-20',
+    createdAt: '2026-06-20',
     featured: true
   },
   {
     _id: '2',
-    title: 'The Ultimate Guide to Family Online Safety in 2024',
+    title: 'The Ultimate Guide to Family Online Safety in 2026',
     content: 'Protecting your family online is more important than ever. This guide provides practical tips and tools to ensure your loved ones stay safe in the digital space...',
     excerpt: 'Essential online safety tips and tools to protect your family in the digital age.',
     category: 'Technology',
@@ -32,7 +32,7 @@ export const mockPosts = [
     comments: [],
     tags: ['safety', 'privacy', 'parenting'],
     author: 'ODAA Admin',
-    createdAt: '2024-01-08',
+    createdAt: '2026-06-08',
     featured: true
   },
   {
@@ -47,7 +47,7 @@ export const mockPosts = [
     comments: [],
     tags: ['screen-time', 'parenting', 'balance'],
     author: 'ODAA Admin',
-    createdAt: '2024-01-05',
+    createdAt: '2026-06-05',
     featured: true
   },
   {
@@ -62,7 +62,7 @@ export const mockPosts = [
     comments: [],
     tags: ['website', 'tutorial', 'beginner'],
     author: 'ODAA Admin',
-    createdAt: '2023-12-28'
+    createdAt: '2026-02-28'
   },
   {
     _id: '7',
@@ -76,7 +76,7 @@ export const mockPosts = [
     comments: [],
     tags: ['news', 'trends', 'updates'],
     author: 'ODAA Admin',
-    createdAt: '2023-12-25'
+    createdAt: '2026-12-25'
   },
   {
     _id: '8',
@@ -90,7 +90,7 @@ export const mockPosts = [
     comments: [],
     tags: ['games', 'family-time', 'fun'],
     author: 'ODAA Admin',
-    createdAt: '2023-12-20',
+    createdAt: '2026-12-20',
     featured: true
   }
 ];
