@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json({ limit: '10mb' }));
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:5173' }));
+app.use(cors({ origin: process.env.FRONTEND_URL || 'https://odaa-blog-family-4hfy-cmlw01mzg-mandeveloper582-oss-projects.vercel.app' }));
 
 // Ensure uploads folder exists for local fallback
 const fs = require('fs');
