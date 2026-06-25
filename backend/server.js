@@ -8,9 +8,16 @@ const errorHandler = require('./middleware/errorHandler');
 
 dotenv.config();
 const app = express();
+app.get('/', (req, res) => {
+	res.json({
+		success: true,
+		message: "odaa-blog-family API is running. Visit the frontend at https://odaa-blog-family.vercel.app/",
+
+	});
+});
 
 app.use(express.json({ limit: '10mb' }));
-app.use(cors({ origin: process.env.FRONTEND_URL || 'https://odaa-blog-family-4hfy-cmlw01mzg-mandeveloper582-oss-projects.vercel.app' }));
+app.use(cors({ origin: process.env.FRONTEND_URL || 'https://odaa-blog-family.vercel.app' }));
 
 // Ensure uploads folder exists for local fallback
 const fs = require('fs');
