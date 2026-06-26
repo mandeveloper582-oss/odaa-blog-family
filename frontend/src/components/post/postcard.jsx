@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { FiHeart, FiMessageCircle, FiEye } from 'react-icons/fi';
-
 export default function PostCard({ post }) {
   return (
     <div className="card group animate-fade-in">
