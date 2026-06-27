@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FiHeart, FiArrowLeft, FiShare2 } from 'react-icons/fi';
-import CommentSection from '../components/Post/CommentSection';
+import CommentSection from '../components/post/CommentSection';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 import { getPost, likePost, incrementViews } from '../services/firebase';
 import toast from 'react-hot-toast';
