@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "start": "npm --prefix frontend run preview"
+  },
   "dependencies": {
     "firebase": "^12.14.0"
   }
