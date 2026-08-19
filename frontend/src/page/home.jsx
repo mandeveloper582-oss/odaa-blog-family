@@ -1,6 +1,6 @@
  import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import PostCard from '../components/Post/PostCard';
+import PostCard from '../components/post/PostCard';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 import { getPosts } from '../services/firebase';
 
