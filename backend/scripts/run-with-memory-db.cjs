@@ -15,6 +15,7 @@ const bcrypt = require('bcrypt');
 
     const env = Object.assign({}, process.env, {
       MONGO_URI: uri,
+      ADMIN_EMAIL: process.env.ADMIN_EMAIL || 'galataaomer@gmail.com',
       ADMIN_PASSWORD_HASH,
       JWT_SECRET: process.env.JWT_SECRET || 'dev-jwt-secret',
       FRONTEND_URL: process.env.FRONTEND_URL || 'http://localhost:5173',

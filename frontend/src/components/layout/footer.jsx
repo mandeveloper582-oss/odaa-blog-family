@@ -18,10 +18,10 @@ export default function Footer() {
                 ODAA FAMILY BLOG is dedicated to empowering families through technology, interprenership, leadership. We provide insights, tips, and stories to help you navigate the digital world while keeping family values at the core.
             </p>
             <div className="flex flex-wrap gap-3 mt-4">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><FaFacebook size={20} /></a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><FaTwitter size={20} /></a>
+              <a href="https://www.facebook.com/Galoo250" className="text-gray-400 hover:text-primary-400 transition-colors"><FaFacebook size={20} /></a>
+              <a href="http://linkedin.com/in/galataaomer388927335" className="text-gray-400 hover:text-primary-400 transition-colors"><FaLinkedin size={20} /></a>
               <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><FaInstagram size={20} /></a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><FaTelegram size={20} /> </a>
+              <a href="@Geleta250" className="text-gray-400 hover:text-primary-400 transition-colors"><FaTelegram size={20} /> </a>
               <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><FaYoutube size={20} /></a>
             </div>
           </div>
