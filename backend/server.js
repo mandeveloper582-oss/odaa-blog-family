@@ -17,7 +17,25 @@ app.get('/', (req, res) => {
 });
 
 app.use(express.json({ limit: '10mb' }));
-app.use(cors({ origin: process.env.FRONTEND_URL || 'https://odaa-blog-family.vercel.app' }));
+
+// Support multiple allowed frontend origins (comma-separated) and local dev hosts
+const FRONTEND_URLS = process.env.FRONTEND_URL || 'https://odaa-blog-family.vercel.app';
+const allowedOrigins = FRONTEND_URLS.split(',').map((u) => u.trim()).filter(Boolean);
+if (process.env.NODE_ENV !== 'production') {
+	// allow common local dev hosts
+	allowedOrigins.push('http://localhost:5173', 'http://localhost:3000');
+}
+
+app.use(
+	cors({
+		origin: function (origin, callback) {
+			// allow non-browser requests such as curl or server-to-server
+			if (!origin) return callback(null, true);
+			if (allowedOrigins.indexOf(origin) !== -1) return callback(null, true);
+			return callback(new Error('CORS policy disallows access from this origin'));
+		},
+	})
+);
 
 // Ensure uploads folder exists for local fallback
 const fs = require('fs');

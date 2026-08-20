@@ -1,8 +1,11 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-// Use environment variable or fallback
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Use environment variable or fallback. Normalize so `VITE_API_URL` may omit trailing `/api`.
+const _RAW_API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = _RAW_API.replace(/\/$/, '').endsWith('/api')
+  ? _RAW_API.replace(/\/$/, '')
+  : `${_RAW_API.replace(/\/$/, '')}/api`;
 
 const api = axios.create({
   baseURL: API_URL,
