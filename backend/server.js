@@ -56,6 +56,18 @@ app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
 app.use(errorHandler);
 
+// Health endpoint that reports DB connection status
+app.get('/health', (req, res) => {
+	try {
+		const mongoose = require('mongoose');
+		const state = mongoose.connection.readyState; // 0 disconnected, 1 connected, 2 connecting, 3 disconnecting
+		const states = ['disconnected', 'connected', 'connecting', 'disconnecting'];
+		res.json({ ok: state === 1, dbState: states[state] || state });
+	} catch (err) {
+		res.status(500).json({ ok: false, error: String(err) });
+	}
+});
+
 // Only connect and listen when this file is run directly.
 if (require.main === module) {
 	const PORT = process.env.PORT || 5000;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaTwitter, FaInstagram, FaTelegram, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaTelegram, FaYoutube, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,7 +19,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-3 mt-4">
               <a href="https://www.facebook.com/Galoo250" className="text-gray-400 hover:text-primary-400 transition-colors"><FaFacebook size={20} /></a>
-              <a href="http://linkedin.com/in/galataaomer388927335" className="text-gray-400 hover:text-primary-400 transition-colors"><FaLinkedin size={20} /></a>
+              <a href="https://www.linkedin.com/in/galataaomer388927335" className="text-gray-400 hover:text-primary-400 transition-colors"><FaLinkedin size={20} /></a>
               <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><FaInstagram size={20} /></a>
               <a href="@Geleta250" className="text-gray-400 hover:text-primary-400 transition-colors"><FaTelegram size={20} /> </a>
               <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><FaYoutube size={20} /></a>
