@@ -1,12 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/posts');
 const errorHandler = require('./middleware/errorHandler');
 
-dotenv.config();
+// Load environment from backend/.env explicitly so running from repo root works
+dotenv.config({ path: path.join(__dirname, '.env') });
 const app = express();
 app.get('/', (req, res) => {
 	res.json({
@@ -39,7 +41,6 @@ app.use(
 
 // Ensure uploads folder exists for local fallback
 const fs = require('fs');
-const path = require('path');
 const uploadsDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
 
@@ -60,7 +61,11 @@ if (require.main === module) {
 	const PORT = process.env.PORT || 5000;
 
 	const startServer = async () => {
-		await connectDB();
+		if (process.env.SKIP_DB === 'true') {
+			console.log('SKIP_DB=true — skipping MongoDB connection (development/test mode)');
+		} else {
+			await connectDB();
+		}
 		const server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 		server.on('error', (err) => {
 			if (err.code === 'EADDRINUSE') {
