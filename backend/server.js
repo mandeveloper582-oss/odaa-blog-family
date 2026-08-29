@@ -114,8 +114,7 @@ if (
   console.warn(
     'Cloudinary not configured — using local uploads fallback'
   );
-)
-
+}
 app.use(
   '/api/auth',
   authRoutes
@@ -215,4 +214,3 @@ if (require.main === module) {
 
 
 module.exports = app;
-```
