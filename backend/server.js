@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 app.use(express.json({ limit: '10mb' }));
 
 // Support multiple allowed frontend origins (comma-separated) and local dev hosts
-const FRONTEND_URLS = process.env.FRONTEND_URL || 'https://odaa-blog-family.vercel.app';
+const FRONTEND_URLS = process.env.FRONTEND_URL || 'odaa-blog-family-4hfy.vercel.app';
 const allowedOrigins = FRONTEND_URLS.split(',').map((u) => u.trim()).filter(Boolean);
 if (process.env.NODE_ENV !== 'production') {
 	// allow common local dev hosts
