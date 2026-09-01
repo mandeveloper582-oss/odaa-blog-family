@@ -26,18 +26,31 @@ app.get('/', (req, res) => {
 });
 
 
-// Support multiple allowed frontend origins
-// Example:
-// FRONTEND_URL=https://odaa-blog-family-4hfy.vercel.app,http://localhost:5173
+// Support multiple allowed frontend origins.
+// Accept both raw hosts and full URLs so deployed Vercel builds keep working.
+const normalizeOrigin = (value) => {
+  if (!value) return null;
+
+  const trimmed = value.trim().replace(/\/$/, '');
+  if (!trimmed) return null;
+
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+
+  return `https://${trimmed}`;
+};
 
 const FRONTEND_URLS =
   process.env.FRONTEND_URL ||
   'https://odaa-blog-family-4hfy.vercel.app';
 
-const allowedOrigins = FRONTEND_URLS
-  .split(',')
-  .map((u) => u.trim())
-  .filter(Boolean);
+const allowedOrigins = [...new Set(
+  FRONTEND_URLS
+    .split(',')
+    .map((u) => normalizeOrigin(u))
+    .filter(Boolean)
+)];
 
 // Allow local development hosts only in development
 if (process.env.NODE_ENV !== 'production') {
