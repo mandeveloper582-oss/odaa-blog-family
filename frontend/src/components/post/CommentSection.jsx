@@ -40,11 +40,13 @@ export default function CommentSection({ comments = [], postId }) {
     const result = await addComment(postId, commentData);
     
     if (result.success) {
-      const newComment = {
-        id: result.comment.id,
-        ...result.comment,
+      const newComment = result.comment || result.data || {};
+      const commentToAdd = {
+        ...newComment,
+        id: newComment.id || newComment._id,
       };
-      setLocalComments([newComment, ...localComments]);
+
+      setLocalComments((prev) => [commentToAdd, ...prev]);
       setName('');
       setText('');
       toast.success('Comment posted successfully!');
