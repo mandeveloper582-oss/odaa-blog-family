@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Post = require('../models/Post');
 const cloudinary = require('../config/cloudinary');
 
@@ -16,6 +17,10 @@ exports.getPosts = async (req, res, next) => {
 
 exports.getPost = async (req, res, next) => {
   try {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ message: 'Invalid post id' });
+    }
+
     const post = await Post.findById(req.params.id);
     if (!post) return res.status(404).json({ message: 'Post not found' });
     post.views = (post.views || 0) + 1;
@@ -144,14 +149,25 @@ exports.deletePost = async (req, res, next) => {
 
 exports.likePost = async (req, res, next) => {
   try {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ message: 'Invalid post id' });
+    }
+
     const post = await Post.findById(req.params.id);
     if (!post) return res.status(404).json({ message: 'Post not found' });
-    const userId = req.body.userId || 'anon';
+
+    const userId = req.body?.userId || req.headers['x-client-id'] || 'anon';
     const idx = post.likes.indexOf(userId);
-    if (idx === -1) post.likes.push(userId);
-    else post.likes.splice(idx, 1);
+    const liked = idx === -1;
+
+    if (liked) {
+      post.likes.push(userId);
+    } else {
+      post.likes.splice(idx, 1);
+    }
+
     await post.save();
-    res.json({ likes: post.likes.length });
+    res.json({ likes: post.likes.length, liked });
   } catch (err) {
     next(err);
   }
@@ -159,12 +175,25 @@ exports.likePost = async (req, res, next) => {
 
 exports.commentPost = async (req, res, next) => {
   try {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ message: 'Invalid post id' });
+    }
+
     const post = await Post.findById(req.params.id);
     if (!post) return res.status(404).json({ message: 'Post not found' });
-    const { name, text } = req.body;
-    post.comments.push({ name, text });
+
+    const name = String(req.body?.name || 'Anonymous').trim();
+    const text = String(req.body?.text || '').trim();
+
+    if (!name || !text) {
+      return res.status(400).json({ message: 'Name and comment are required' });
+    }
+
+    post.comments.push({ name, text, createdAt: new Date() });
     await post.save();
-    res.json(post.comments);
+
+    const addedComment = post.comments[post.comments.length - 1].toObject ? post.comments[post.comments.length - 1].toObject() : post.comments[post.comments.length - 1];
+    res.status(201).json(addedComment);
   } catch (err) {
     next(err);
   }
