@@ -25,6 +25,8 @@ export const adminLogout = async () => {
 };
 
 export const getCurrentUser = async () => {
+  if (!localStorage.getItem('token')) return null;
+
   try {
     const res = await api.post('/auth/me');
     return res.data;

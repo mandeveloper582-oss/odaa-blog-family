@@ -15,6 +15,18 @@ export default function SinglePost() {
   const [liked, setLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(0);
 
+  const formatPostDate = (value) => {
+    if (!value) return 'Recently';
+
+    const date = typeof value.toDate === 'function' ? value.toDate() : new Date(value);
+
+    if (Number.isNaN(date.getTime())) {
+      return 'Recently';
+    }
+
+    return moment(date).format('MMMM DD, YYYY');
+  };
+
   useEffect(() => {
     loadPost();
   }, [id]);
@@ -63,7 +75,7 @@ export default function SinglePost() {
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <div className="flex items-center gap-3 mb-3">
               <span className="px-3 py-1 bg-primary-500 rounded-full text-sm font-semibold">{post.category}</span>
-              <span className="text-sm opacity-90">📅 {moment(post.createdAt?.toDate()).format('MMMM DD, YYYY')}</span>
+              <span className="text-sm opacity-90">📅 {formatPostDate(post.createdAt)}</span>
               <span className="text-sm opacity-90">✍️ {post.author || 'ODAA Admin'}</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>

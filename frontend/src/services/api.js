@@ -31,12 +31,15 @@ api.interceptors.response.use(
       error?.response?.data?.message ||
       error?.message ||
       'Request failed';
+    const isAuthCheck = error?.config?.url?.endsWith('/auth/me');
 
     if (status === 401) {
       localStorage.removeItem('token');
     }
 
-    toast.error(message);
+    if (!(status === 401 && isAuthCheck)) {
+      toast.error(message);
+    }
 
     return Promise.reject(error);
   }
